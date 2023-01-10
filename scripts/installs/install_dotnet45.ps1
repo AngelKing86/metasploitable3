@@ -8,7 +8,8 @@ function LogWrite {
  
 LogWrite "Downloading dotNet 4.5.1"
 try {
-    (New-Object System.Net.WebClient).DownloadFile('http://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe', 'C:\Windows\Temp\dotnet.exe')
+    #(New-Object System.Net.WebClient).DownloadFile('http://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe', 'C:\Windows\Temp\dotnet.exe')
+    (New-Object System.Net.WebClient).DownloadFile('http://files.network-pro.de/metasploitable3/NDP451-KB2858728-x86-x64-AllOS-ENU.exe', 'C:\Windows\Temp\dotnet.exe')
 } catch {
     LogWrite $_.Exception | Format-List -force
     LogWrite "Failed to download file."

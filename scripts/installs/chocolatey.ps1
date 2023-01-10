@@ -48,10 +48,16 @@ $isWin2012 = wmic os get caption | find /i '" 2012 "'
 
 # skip wrapping for 8 or 2012?
 if ($isWin8 -or $isWin2012){
-   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+   $env:chocolateyVersion = '0.10.8';
+   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+   iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+   #iex ((New-Object System.Net.WebClient).DownloadString('http://files.network-pro.de/metasploitable3/install.ps1'))
 }else{
     Invoke-CLR4PowerShellCommand -ScriptBlock {
-       [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+       $env:chocolateyVersion = '0.10.8';
+       [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+       iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+       #iex ((New-Object System.Net.WebClient).DownloadString('http://files.network-pro.de/metasploitable3/install.ps1'))
     }
 }
 

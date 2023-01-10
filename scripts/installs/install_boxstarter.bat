@@ -1,3 +1,3 @@
 chocolatey feature enable -n=allowGlobalConfirmation
-choco install BoxStarter
+choco install boxstarter --version=2.13.0
 chocolatey feature disable -n=allowGlobalConfirmation

@@ -11,6 +11,7 @@ iptables_rule '1_apache' do
 end
 
 package 'apache2' do
+  options '--force-yes'
   action :install
 end
 

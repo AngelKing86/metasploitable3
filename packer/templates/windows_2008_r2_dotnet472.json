@@ -224,6 +224,16 @@
     {
       "type": "powershell",
       "scripts": [
+        "./scripts/installs/install_dotnet47.ps1"
+      ],
+      "pause_before": "60s"
+    },
+    {
+      "type": "windows-restart"
+    },
+    {
+      "type": "powershell",
+      "scripts": [
         "./scripts/configs/vagrant-ssh.ps1",
         "./scripts/installs/chocolatey.ps1"
       ],

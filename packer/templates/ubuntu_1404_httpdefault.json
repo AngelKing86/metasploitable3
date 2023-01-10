@@ -85,7 +85,7 @@
         " auto=true",
         " priority=critical",
         " initrd=/install/initrd.gz",
-        " preseed/url=http://10.0.2.3:{{ .HTTPPort }}/preseed.cfg",
+        " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
         " -- ",
         "<enter>"
       ],

@@ -48,9 +48,11 @@ $isWin2012 = wmic os get caption | find /i '" 2012 "'
 
 # skip wrapping for 8 or 2012?
 if ($isWin8 -or $isWin2012){
-   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub', 'C:\Users\vagrant\.ssh\authorized_keys')
+   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+   (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub', 'C:\Users\vagrant\.ssh\authorized_keys')
 }else{
     Invoke-CLR4PowerShellCommand -ScriptBlock {
-       [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub', 'C:\Users\vagrant\.ssh\authorized_keys')
+       [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+       (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub', 'C:\Users\vagrant\.ssh\authorized_keys')
     }
 }
