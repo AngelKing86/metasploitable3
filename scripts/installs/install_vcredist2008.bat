@@ -1,2 +1,2 @@
-powershell -Command "[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true} ; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object System.Net.WebClient).DownloadFile('http://files.network-pro.de/metasploitable3/vcredist_2008_x64.exe', 'C:\Windows\Temp\vcredist_2008_x64.exe')" <NUL
+powershell -Command "[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true} ; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object System.Net.WebClient).DownloadFile('https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x64.exe', 'C:\Windows\Temp\vcredist_2008_x64.exe')" <NUL
 start /wait C:\Windows\Temp\vcredist_2008_x64.exe /q

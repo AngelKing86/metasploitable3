@@ -29,7 +29,7 @@ cmd /c ""C:\Program Files\7-Zip\7z.exe" x C:\Windows\Temp\VBoxGuestAdditions.iso
 
 :: There needs to be Oracle CA (Certificate Authority) certificates installed in order
 :: to prevent user intervention popups which will undermine a silent installation.
-REM cmd /c certutil -addstore -f "TrustedPublisher" C:\Windows\Temp\virtualbox\cert\vbox-sha1.cer
+if exist "C:\Windows\Temp\virtualbox\cert\vbox-sha1.cer" cmd /c certutil -addstore -f "TrustedPublisher" C:\Windows\Temp\virtualbox\cert\vbox-sha1.cer
 cmd /c C:\Windows\Temp\virtualbox\cert\VBoxCertUtil.exe add-trusted-publisher vbox*.cer --root vbox*.cer
 
 cmd /c C:\Windows\Temp\virtualbox\VBoxWindowsAdditions.exe /S
