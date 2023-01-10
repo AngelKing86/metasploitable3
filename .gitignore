@@ -1,4 +1,5 @@
 .vagrant/
+packer.exe
 packer_cache/
 packer/builds/
 resources/drivers/
