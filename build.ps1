@@ -8,7 +8,23 @@ $packer = "packer.exe"
 $expectedVBoxLocation = "C:\Program Files\Oracle\VirtualBox"
 $expectedVagrantLocation="C:\HashiCorp\Vagrant\bin"
 
+function PreloadApps {
+    
+    
+    $progresspreference = 'silentlyContinue'
+    Write-Host "Checking for Preload Windows Management Framework 5..."
+    If ($(Test-Path ".\resources\preload\Win7AndW2K8R2-KB3134760-x64.msu") -eq $False) {
+        Write-Host "Windows Management Framework 5... not found - Downloading..."
+        Invoke-WebRequest 'https://download.microsoft.com/download/2/C/6/2C6E1B4A-EBE5-48A6-B225-2D2058A9CEFB/Win7AndW2K8R2-KB3134760-x64.msu' -OutFile '.\resources\preload\Win7AndW2K8R2-KB3134760-x64.msu'
+    }
+    Write-Host "Checking for Preload dotNet 4.5.1..."
+    If ($(Test-Path ".\resources\preload\NDP451-KB2858728-x86-x64-AllOS-ENU.exe") -eq $False) {
+        Write-Host "dotNet 4.5.1... not found - Downloading..."
+        Invoke-WebRequest 'https://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe' -OutFile '.\resources\preload\NDP451-KB2858728-x86-x64-AllOS-ENU.exe'
+    }
 
+    $progressPreference = 'Continue'
+}
 
 function CompareVersions ($actualVersion, $expectedVersion, $exactMatch = $False) {
     If ($exactMatch) {
@@ -175,7 +191,7 @@ function InstallBox($os_full, $os_short)
     }
 }
 
-
+PreloadApps
 
 Write-Host "All requirements found. Proceeding..."
 

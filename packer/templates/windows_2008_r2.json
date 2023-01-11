@@ -18,7 +18,7 @@
         "{{user `scripts_dir`}}/configs/microsoft-updates.bat",
         "{{user `scripts_dir`}}/configs/win-updates.ps1",
         "{{user `scripts_dir`}}/installs/openssh.ps1",
-        "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
+	  "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
         "{{user `scripts_dir`}}/installs/install_wmf.ps1",
         "{{user `resources_dir`}}/certs/oracle-cert.cer",
         "{{user `resources_dir`}}/certs/gdig2.crt",
@@ -56,7 +56,7 @@
         "{{user `scripts_dir`}}/configs/microsoft-updates.bat",
         "{{user `scripts_dir`}}/configs/win-updates.ps1",
         "{{user `scripts_dir`}}/installs/openssh.ps1",
-        "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
+	  "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
         "{{user `scripts_dir`}}/installs/install_wmf.ps1",
         "{{user `resources_dir`}}/certs/oracle-cert.cer",
         "{{user `resources_dir`}}/certs/gdig2.crt",
@@ -99,7 +99,7 @@
         "{{user `scripts_dir`}}/configs/microsoft-updates.bat",
         "{{user `scripts_dir`}}/configs/win-updates.ps1",
         "{{user `scripts_dir`}}/installs/openssh.ps1",
-        "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
+	  "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
         "{{user `scripts_dir`}}/installs/install_wmf.ps1",
         "{{user `resources_dir`}}/certs/oracle-cert.cer",
         "{{user `resources_dir`}}/certs/gdig2.crt",
@@ -156,7 +156,7 @@
         "{{user `scripts_dir`}}/configs/microsoft-updates.bat",
         "{{user `scripts_dir`}}/configs/win-updates.ps1",
         "{{user `scripts_dir`}}/installs/openssh.ps1",
-        "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
+	  "{{user `scripts_dir`}}/installs/install_dotnet45.ps1",
         "{{user `scripts_dir`}}/installs/install_wmf.ps1",
         "{{user `resources_dir`}}/certs/oracle-cert.cer",
         "{{user `resources_dir`}}/certs/gdig2.crt",
@@ -208,7 +208,8 @@
         "{{user `scripts_dir`}}/configs/update_root_certs.bat",
         "{{user `scripts_dir`}}/configs/disable-auto-logon.bat",
         "{{user `scripts_dir`}}/configs/enable-rdp.bat"
-      ]
+      ],
+	"pause_before": "300s"
     },
     {
       "type": "windows-shell",

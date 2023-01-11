@@ -2,6 +2,7 @@
 packer.exe
 packer_cache/
 packer/builds/
+output-virtualbox-iso/
 resources/drivers/
 *.vfd
 *.exe
