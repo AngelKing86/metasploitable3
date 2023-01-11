@@ -8,7 +8,7 @@ function LogWrite {
  
 LogWrite "Downloading Windows Management Framework 5.0"
 try {
-    #(New-Object System.Net.WebClient).DownloadFile('http://files.network-pro.de/metasploitable3/Win7AndW2K8R2-KB3134760-x64.msu', 'C:\Windows\Temp\wmf.msu')
+    (New-Object System.Net.WebClient).DownloadFile('http://files.network-pro.de/metasploitable3/Win7AndW2K8R2-KB3134760-x64.msu', 'C:\Windows\Temp\wmf.msu')
 } catch {
     LogWrite $_.Exception | Format-List -force
     LogWrite "Failed to download file."

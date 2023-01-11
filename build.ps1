@@ -8,10 +8,11 @@ $packer = "packer.exe"
 $expectedVBoxLocation = "C:\Program Files\Oracle\VirtualBox"
 $expectedVagrantLocation="C:\HashiCorp\Vagrant\bin"
 
-function PreloadApps {
-    
-    
+function PreloadApps {      
     $progresspreference = 'silentlyContinue'
+    If ($(Test-Path ".\resources\preload") -eq $False) {
+        New-Item -Path '.\resources\preload' -ItemType Directory
+    }
     Write-Host "Checking for Preload Windows Management Framework 5..."
     If ($(Test-Path ".\resources\preload\Win7AndW2K8R2-KB3134760-x64.msu") -eq $False) {
         Write-Host "Windows Management Framework 5... not found - Downloading..."
